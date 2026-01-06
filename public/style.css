@@ -113,6 +113,11 @@ td {
     font-weight: bold;
 }
 
+.tnp {
+    color: #0ea5e9;   /* soft blue */
+    font-weight: bold;
+}
+
 /* ===== STATS CARD ===== */
 .card {
     background: #f8fafc;
