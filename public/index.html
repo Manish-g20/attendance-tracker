@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Period Wise Attendance</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a href="stats.html" class="nav-link">📊 View All Stats</a>
+<h1>⏰ Period Wise Attendance Tracker</h1>
+
+<div class="form">
+    <input type="date" id="date">
+
+    <select id="day">
+        <option value="">Select Day</option>
+        <option>Monday</option>
+        <option>Tuesday</option>
+        <option>Wednesday</option>
+        <option>Thursday</option>
+        <option>Friday</option>
+    </select>
+
+    <select id="period">
+        <option value="">Select Period</option>
+        <option value="10-11">10:00 – 11:00</option>
+        <option value="11-12">11:00 – 12:00</option>
+        <option value="12-1">12:00 – 1:00</option>
+        <option value="2-3">2:00 – 3:00</option>
+        <option value="3-4">3:00 – 4:00</option>
+        <option value="4-5">4:00 – 5:00</option>
+    </select>
+
+    <select id="status">
+        <option value="">Select Status</option>
+        <option value="P">Present</option>
+        <option value="A">Absent</option>
+    </select>
+
+    <button onclick="mark()">Mark Attendance</button>
+</div>
+
+
+<h2>Attendance %: <span id="percent">0%</span></h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Day</th>
+            <th>Period</th>
+            <th>Subject</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody id="records"></tbody>
+</table>
+
+<script src="script.js"></script>
+</body>
+</html>
