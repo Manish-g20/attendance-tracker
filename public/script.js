@@ -37,9 +37,18 @@ function loadAll() {
                     <td>${r.day}</td>
                     <td>${r.period}</td>
                     <td>${r.subject}</td>
-                    <td class="${r.status === 'P' ? 'present' : 'absent'}">
-                        ${r.status}
-                    </td>
+                   <td class="${
+    r.status === 'P' ? 'present' :
+    r.status === 'A' ? 'absent' :
+    'tnp'
+}">
+    ${
+        r.status === 'TNP'
+            ? 'Teacher Not Present'
+            : r.status
+    }
+</td>
+
                     <td>
                         <button class="delete-btn"
                             onclick="clearAttendance('${r.date}','${r.day}','${r.period}')">
