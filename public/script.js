@@ -1,4 +1,4 @@
-const API = "http://localhost:3000";
+const API = " ";
 
 function mark() {
     const date = document.getElementById("date").value;
