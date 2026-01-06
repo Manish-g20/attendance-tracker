@@ -114,11 +114,15 @@ app.get("/attendance", (req, res) => {
 // Percentage
 app.get("/attendance/percentage", (req, res) => {
     db.get(`
-        SELECT COUNT(*) total,
-        SUM(CASE WHEN status='P' THEN 1 ELSE 0 END) present
+        SELECT 
+            COUNT(CASE WHEN status IN ('P','A') THEN 1 END) AS total,
+            SUM(CASE WHEN status='P' THEN 1 ELSE 0 END) AS present
         FROM attendance
     `, [], (err, row) => {
-        const percent = row.total ? ((row.present / row.total) * 100).toFixed(2) : 0;
+        const percent = row.total
+            ? ((row.present / row.total) * 100).toFixed(2)
+            : 0;
+
         res.send({ percent });
     });
 });
